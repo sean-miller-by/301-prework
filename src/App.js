@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Main } from './Main';
+import Button from './Button';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -8,7 +9,7 @@ function App() {
   return (
     <div className="App" id="test">
       <header className="App-header">
-        <button onClick={(_e) => setCount(count+1)} style={{ width: 200 }} />
+        <Button value={count} onChange={setCount} />
         {(count < 10) && <Main shouldFlex={count > 5} />}
       </header>
     </div>
