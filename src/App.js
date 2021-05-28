@@ -1,22 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Main } from './Main';
 
 function App() {
+  const [count, setCount] = React.useState(0);
+  console.log('count', count)
   return (
-    <div className="App">
+    <div className="App" id="test">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={(_e) => setCount(count+1)} style={{ width: 200 }} />
+        {(count < 10) && <Main shouldFlex={count > 5} />}
       </header>
     </div>
   );
